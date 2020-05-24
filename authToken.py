@@ -1,7 +1,6 @@
 # Generate Auth Token and Session Cookies
 # https://github.com/MicroStrategy/mstrio-py
 # pip3 install mstrio-py
-
 import requests
 
 base_url="http://localhost:8080/MicroStrategyLibrary/api"
