@@ -24,5 +24,3 @@ r1 = requests.post(auth_url, data=body)
 
 authToken = r1.headers['X-MSTR-AuthToken']
 cookies = dict(r1.cookies)
-
-print(authToken)
