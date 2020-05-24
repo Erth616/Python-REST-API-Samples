@@ -1,12 +1,10 @@
-# [GET I-Server nodes information]
-
+# [GET I-Server nodes information --> /api/monitors/iServer/nodes]
 import requests
 import json
 
 base_url = "http://localhost:8080/MicroStrategyLibrary/api"
 
 # [GENERATE AUTH TOKEN]
-
 auth_url = base_url + "/auth/login"
 
 username = "administrator"
@@ -21,15 +19,11 @@ body = {
 r = requests.post(auth_url, data=body)
 
 # [ Auth Token and Session Cookie for subsequent requests]
-
 authToken = r.headers['X-MSTR-AuthToken']
 cookies = dict(r.cookies)
 
-# [ GET I SERVER NODE INFO --> /api/monitors/iServer/nodes]
-
+# [ URL --> /api/monitors/iServer/nodes]
 nodes_url = base_url + "/monitors/iServer/nodes"
-
-# WAS-PSALAZAR6 Tutorial ID --> B19DEDCC11D4E0EFC000EB9495D0F44F
 
 h1 = {
 "Accept":"application/json",
@@ -40,5 +34,3 @@ h1 = {
 r1 = requests.get(nodes_url, headers=h1, cookies=cookies)
 
 print(r1.text)
-
-# r2 = requests.post(uri, headers=h2, data=b2)
